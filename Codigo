@@ -57,9 +57,9 @@
 </head>
 <body>
 
-  <h1>Manipulação do DOM</h1>
+  <h1>Atividade do DOM</h1>
 
-  <!-- CONTADOR -->
+  
   <div class="box">
     <h2>Contador de Cliques</h2>
     <button id="btnAdd">+</button>
@@ -67,7 +67,7 @@
     <span class="contador" id="contador">0</span>
   </div>
 
-  <!-- TEXTO DINÂMICO -->
+  
   <div class="box">
     <h2>Adicionar Texto</h2>
     <input type="text" id="inputTexto" placeholder="Digite algo e pressione Enter">
@@ -75,7 +75,7 @@
     <div id="saidaTexto"></div>
   </div>
 
-  <!-- LISTA -->
+  
   <div class="box">
     <h2>Adicionar Lista</h2>
     <select id="tipoLista">
@@ -86,15 +86,13 @@
     <div id="areaLista"></div>
   </div>
 
-  <!-- RESET -->
+ 
   <div class="box">
     <button id="btnReset">Resetar Tudo</button>
   </div>
 
 <script>
-  // =========================
-  // SELEÇÃO DE ELEMENTOS
-  // =========================
+
   const contadorEl = document.getElementById("contador");
   const btnAdd = document.getElementById("btnAdd");
   const btnSub = document.getElementById("btnSub");
@@ -109,14 +107,10 @@
 
   const btnReset = document.getElementById("btnReset");
 
-  // =========================
-  // ESTADO
-  // =========================
+ 
+  
   let contador = 0;
 
-  // =========================
-  // CONTADOR
-  // =========================
   btnAdd.addEventListener("click", () => {
     contador++;
     atualizarContador();
@@ -135,9 +129,6 @@
     contadorEl.textContent = contador;
   }
 
-  // =========================
-  // TEXTO DINÂMICO + ENTER
-  // =========================
   inputTexto.addEventListener("keydown", (event) => {
     if (event.key === "Enter") {
       if (inputTexto.value.trim() === "") return;
@@ -151,9 +142,7 @@
     }
   });
 
-  // =========================
-  // CONTADOR DE CARACTERES
-  // =========================
+  
   inputTexto.addEventListener("input", atualizarCharCount);
 
   function atualizarCharCount() {
@@ -161,9 +150,7 @@
     charCountEl.textContent = texto.length;
   }
 
-  // =========================
-  // ADICIONAR LISTA
-  // =========================
+  
   btnLista.addEventListener("click", () => {
     const tipo = tipoLista.value;
     const lista = document.createElement(tipo);
@@ -178,9 +165,7 @@
     areaLista.appendChild(lista);
   });
 
-  // =========================
-  // RESET
-  // =========================
+ 
   btnReset.addEventListener("click", () => {
     contador = 0;
     atualizarContador();
